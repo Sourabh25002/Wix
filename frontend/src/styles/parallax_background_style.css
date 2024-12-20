@@ -1,0 +1,41 @@
+
+
+/* Parallax Background */
+/* .parallax-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600vh; 
+  background: 
+      url("../assets/first.avif"), 
+      linear-gradient(to right, rgba(144, 239, 155, 0.7), rgba(0, 0, 255, 0.7)); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  
+} */
+
+
+/* Parallax Background */
+.parallax-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh; /* Adjust height to fit your content */
+  background: 
+    url("../assets/first.avif") no-repeat center 10vh, /* First image starts slightly below the top */
+    url("../assets/second.avif") no-repeat 0 bottom, /* Second image aligned to extreme left */
+    linear-gradient(to right, rgba(0, 0, 255, 0.7), rgba(0, 0, 255, 0.7)); /* Gradient overlay */
+  background-size: 100% 80vh, auto; /* Reduce width of first image to 50% */
+  background-position: center 10vh, 0 bottom; /* Offset the first image downwards */
+  z-index: -1; /* Ensure it's behind content */
+  pointer-events: none; /* Background should not interfere with interactions */
+}
+
+
+
+
+

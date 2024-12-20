@@ -1,0 +1,111 @@
+.partners-container {
+  background-color: #0327f4; /* Blue background */
+  
+  /* display: flex; */
+  flex-direction: column;
+  gap: 20px;
+  height: 600px;
+  padding-bottom: 50px;
+}
+
+.partners-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  padding: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+
+h3 {
+  font-size: 50px;
+  font-weight: 600;
+  /* margin-left: auto;  */
+  margin-right: 20px; /* Add some spacing before the vertical line */
+  color: white;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 100px;
+  background-color: white;
+}
+
+/* .partners-images {
+  display: flex;
+  gap: 20px;
+} */
+
+/* .partners-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+} */
+
+.horizontal-line {
+  height: 1px;
+  background-color: white;
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.partners-bottom {
+  color: white;
+  padding: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.testimonial {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.testimonial-quote {
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+
+/* Default hidden state */
+.partner-image, .testimonial-quote {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Animation class */
+.partner-image.animate,
+.testimonial-quote.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Add delay for staggered animation */
+.partner-image:nth-child(3) { /* First Image */
+  transition-delay: 0.2s;
+}
+
+.partner-image:nth-child(4) { /* Second Image */
+  transition-delay: 0.4s;
+}
+
+.partner-image:nth-child(5) { /* Third Image */
+  transition-delay: 0.6s;
+}
+
+/* Testimonial quote delay */
+.testimonial-quote.animate {
+  transition-delay: 0.8s;
+}
+
+

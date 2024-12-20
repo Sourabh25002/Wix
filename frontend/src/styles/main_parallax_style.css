@@ -1,0 +1,6 @@
+/* Parallax Container */
+.parallax-container {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling artifacts */
+}

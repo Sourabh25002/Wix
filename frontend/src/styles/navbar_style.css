@@ -1,0 +1,73 @@
+/* Styling for the navbar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: #ffffff; /* Off-white color */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: center; 
+}
+
+
+ .navbar-logo {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  font-size: 2rem;
+  /* font-weight: bold; */
+  color: #000000;
+}
+
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+} 
+
+.navbar-menu li {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li:hover {
+  color: #007bff; 
+}
+
+
+
+.navbar-button {
+  background-color: #000000; 
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #ffffff; /* Darker blue on hover */
+  color: #000000;
+} 

@@ -1,0 +1,94 @@
+/* General Container - Full-Page Setup */
+.product-container {
+  display: flex; /* Switch to flexbox */
+  justify-content: space-between; /* Space between the two columns */
+  align-items: flex-start; /* Align items to the top */
+  height: 110vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  gap: 40px; /* Space between columns */
+  padding: 150px 200px 150px 200px; /* Top, Right, Bottom, Left */
+  box-sizing: border-box;
+  background-color: #ffffff; /* Light background color */
+  margin-top: 40px;
+}
+
+/* Left Column */
+.product-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Larger gap between items */
+}
+
+.product-title {
+  font-size: 50px; /* Larger font size */
+  font-weight: 800;
+  color: #0327f4;
+  margin-bottom: 30px;
+}
+
+.product-item {
+  display: flex; /* Enable flexbox for alignment */
+  flex-direction: column; 
+  justify-content: center; 
+  padding: 0px 450px 0px 0px; /* Top, Right, Bottom, Left */
+}
+
+.product-item h3 {
+  margin: 0 0 15px;
+  font-size: 40px; /* Larger font size */
+  font-weight: 700;
+  color: #000000;
+}
+
+.product-item p {
+  margin: 0;
+  font-size: 20px; /* Slightly larger font size */
+  line-height: 1.6; /* Better readability */
+  color: #555;
+}
+
+/* Animation Styles */
+/* Initial hidden state for h3 and p */
+.product-item h3,
+.product-item p {
+  opacity: 0;
+  transform: translateX(-50px); /* Initially moved left */
+  transition: opacity 0.6s ease, transform 1s ease;
+}
+
+/* Animation for h3 when visible */
+.product-item h3.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animation for p when visible */
+.product-item p.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+/* Right Column */
+.product-right-column {
+  display: flex;
+  align-items: flex-end; /* Align the component to the bottom */
+  justify-content: center; /* Center horizontally */
+  height: 100%; /* Make sure it takes the full height of the container */
+}
+
+.secondary-component {
+  padding: 0; /* Removed padding since we are just displaying an image */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+}
+
+.secondary-image {
+  width: 300px;
+  height: 400px; /* Maintain aspect ratio */
+  display: block; /* Ensure it's a block element, so it doesn't have any inline issues */
+  object-fit: cover; /* Make the image cover the entire area of the container */
+}

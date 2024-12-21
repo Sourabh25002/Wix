@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   gap: 20px;
-  width: 60%; /* You can adjust this to any percentage or fixed width */
+  width: 60%;
   margin: 70px auto 0 auto;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   gap: 20px;
   height: 250px;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .parallax-column {
@@ -45,15 +45,16 @@
 }
 
 .parallax-get-started-btn {
-  background-color: transparent; /* Transparent background */
-  color: white; /* White text */
-  border: 2px solid white; /* White border */
-  border-radius: 20px; /* Rounded corners */
-  padding: 10px 20px; /* Optional: Spacing inside the button */
-  font-size: 16px; /* Optional: Text size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 .parallax-get-started-btn:hover {
   background-color: #ffffff;
   color: rgb(81, 111, 245);
@@ -63,26 +64,29 @@
 .parallax-middle-box {
   display: flex;
   justify-content: center;
-  align-items: center; /* Center content vertically */
+  align-items: center;
   margin-bottom: 40px;
-  width: 80%; /* Set a custom width (adjust as needed) */
-  height: 700px; /* Set a custom height (adjust as needed) */
-  background-color: white; /* White background */
-  border-radius: 30px; /* Curved edges */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-  margin: 0 auto; /* Center horizontally */
+  width: 80%;
+  height: 700px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  overflow: hidden; /* Ensure image does not overflow */
 }
-
 
 .parallax-image-container-1 {
   width: 93%;
   height: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parallax-middle-image {
-  /* width: 100%;
-  border-radius: 8px; */
-  object-fit: cover;
+  width: 100%; /* Image shrinks responsively */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevent cropping */
 }
 
 /* Bottom Section (Flexbox with three boxes) */
@@ -127,8 +131,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black; /* Adds a small black border */
-  border-radius: 5px; /* Adds a slight curve to the border */
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .parallax-bottom-image {
@@ -145,9 +149,7 @@
 
 .parallax-bottom-flex-container {
   display: flex;
-  
   flex-direction: column;
-  
 }
 
 .parallax-bottom-box-3,
@@ -156,9 +158,7 @@
   height: 100px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   align-content: center;
-  
 }
 
 .parallax-bottom-image {
@@ -166,4 +166,122 @@
   height: 100%;
   object-fit: contain;
   border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .parallax-content {
+    width: 80%;
+  }
+
+  .parallax-flex-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .parallax-box-1 h2 {
+    font-size: 60px;
+  }
+
+  .parallax-middle-box {
+    height: 500px;
+  }
+
+  .parallax-bottom-section {
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-content {
+    width: 90%;
+  }
+
+  .parallax-box-1 h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .parallax-box-2 p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .parallax-get-started-btn {
+    width: 100%;
+  }
+
+  .parallax-middle-box {
+    height: 400px;
+  }
+
+  .parallax-bottom-section {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .parallax-image-container-2 {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-box-1 h2 {
+    font-size: 30px;
+  }
+
+  .parallax-box-2 p {
+    font-size: 16px;
+  }
+
+  .parallax-middle-box {
+    height: 300px;
+  }
+
+  .parallax-bottom-section {
+    gap: 10px;
+  }
+
+  .parallax-image-container-2 {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .parallax-middle-box {
+    height: 500px; /* Adjust height for medium screens */
+  }
+
+  .parallax-middle-image {
+    max-width: 100%; /* Ensure the image doesn't exceed the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-middle-box {
+    height: 400px; /* Adjust height for small screens */
+  }
+
+  .parallax-middle-image {
+    max-width: 100%; /* Ensure the image stays inside the container */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-middle-box {
+    height: 300px; /* Adjust height for very small screens */
+  }
+
+  .parallax-middle-image {
+    max-width: 100%; /* Ensure the image fits properly */
+    height: auto;
+  }
 }

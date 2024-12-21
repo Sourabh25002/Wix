@@ -1,12 +1,12 @@
-
 /* General container */
 .demo-container {
-  background-color: white; /* Full white background */
-  height: 80vh; /* Ensure it spans the full viewport height */
-  padding: 40px; /* Add padding inside the container */
+  background-color: white;
+  height: auto; /* Allow the container to expand as needed */
+  padding: 40px;
   font-family: Arial, sans-serif;
   padding-top: 80px;
   padding-left: 120px;
+  box-sizing: border-box; /* Include padding in total width/height */
 }
 
 /* Headings */
@@ -19,12 +19,12 @@
 /* Keyframe for the animation */
 @keyframes slideIn {
   0% {
-    transform: translateX(-50px); /* Start from left */
-    opacity: 0; /* Invisible at the start */
+    transform: translateX(-50px);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0); /* Move to the original position */
-    opacity: 1; /* Become visible */
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -32,27 +32,28 @@
 .demo-subheading {
   font-size: 30px;
   padding-bottom: 30px;
-  opacity: 0; /* Initially hidden */
-  transform: translateX(-50px); /* Start from the left */
-  animation: none; /* No animation until it's triggered */
-  transition: transform 1s ease, opacity 1s ease; /* Smooth transition */
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: none;
+  transition: transform 1s ease, opacity 1s ease;
 }
-
 
 /* Form styles */
 .demo-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%; /* Ensure the form spans full width */
+  box-sizing: border-box; /* Include padding/borders in total width */
 }
 
 /* Grid layout for inputs */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3x2 layout */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for larger screens */
   gap: 20px;
   margin-bottom: 20px;
-  width: 50%;
+  width: 50%; /* Ensure form size fits larger screens */
 }
 
 /* Input groups */
@@ -81,7 +82,6 @@ input:focus {
   outline: none;
 }
 
-
 /* Submit button */
 .submit-button {
   padding: 12px 190px;
@@ -95,4 +95,44 @@ input:focus {
 
 .submit-button:hover {
   background-color: #000000;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .demo-container {
+    padding-left: 60px; /* Adjust padding for smaller screens */
+  }
+
+  .form-grid {
+    width: 80%; /* Increase form width */
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-container {
+    padding-left: 30px; /* Reduce padding further */
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr; /* Switch to a single column layout */
+    width: 100%; /* Use full width for smaller screens */
+  }
+
+  .submit-button {
+    padding: 12px 100px; /* Adjust button size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-heading {
+    font-size: 40px; /* Reduce heading size */
+  }
+
+  .demo-subheading {
+    font-size: 20px; /* Reduce subheading size */
+  }
+
+  .submit-button {
+    padding: 12px 80px; /* Further adjust button size */
+  }
 }

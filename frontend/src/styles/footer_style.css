@@ -1,8 +1,6 @@
 /* Footer Container */
 .footer-container {
-  background-color: #3753e3; /* Light grey background */
-  /* padding-left: 30px;
-  padding-right: 30px; */
+  background-color: #3753e3;
   font-family: Arial, sans-serif;
   color: #ffffff;
 }
@@ -15,11 +13,13 @@
   padding: 40px;
   padding-left: 80px;
   padding-right: 80px;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
 }
 
 .footer-links {
   justify-content: flex-start;
   gap: 20px;
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
 }
 
 .footer-final-row {
@@ -31,6 +31,7 @@
   padding-left: 80px;
   padding-top: 20px;
   padding-bottom: 60px;
+  text-align: center; /* Center-align text for smaller screens */
 }
 
 /* Footer Left and Right Sections */
@@ -59,9 +60,83 @@
   width: calc(100% + 40px); /* Adjust based on the padding removed */
 }
 
-
-
 /* Footer Text */
 .footer-final-row p {
   font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-row {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .footer-final-row {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: unset;
+    width: 100%; /* Make sections take up full width */
+    margin-bottom: 20px; /* Add spacing between stacked sections */
+  }
+
+  .footer-right img {
+    display: inline-block;
+    margin-right: 10px; /* Add spacing between icons */
+  }
+
+  .footer-links {
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px; /* Reduce spacing between links */
+  }
+
+  .footer-final-row {
+    padding-left: 30px;
+    text-align: center; /* Center-align content */
+  }
+
+  .footer-line {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-row {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding: 20px;
+  }
+
+  .footer-final-row {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #fefefe;
+    padding-left: 80px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center; /* Center-align text */
+  }
+
+  .social-icon {
+    margin: 5px; /* Reduce margin for icons */
+  }
 }

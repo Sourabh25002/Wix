@@ -1,14 +1,14 @@
 /* General Container - Full-Page Setup */
 .product-container {
-  display: flex; /* Switch to flexbox */
-  justify-content: space-between; /* Space between the two columns */
-  align-items: flex-start; /* Align items to the top */
-  height: 110vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  gap: 40px; /* Space between columns */
-  padding: 150px 200px 150px 200px; /* Top, Right, Bottom, Left */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 110vh;
+  width: 100vw;
+  gap: 40px;
+  padding: 150px 200px; /* Adjusted shorthand padding */
   box-sizing: border-box;
-  background-color: #ffffff; /* Light background color */
+  background-color: #ffffff;
   margin-top: 40px;
 }
 
@@ -16,79 +16,158 @@
 .product-left-column {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Larger gap between items */
+  gap: 40px;
 }
 
 .product-title {
-  font-size: 50px; /* Larger font size */
+  font-size: 50px;
   font-weight: 800;
   color: #0327f4;
   margin-bottom: 30px;
 }
 
 .product-item {
-  display: flex; /* Enable flexbox for alignment */
-  flex-direction: column; 
-  justify-content: center; 
-  padding: 0px 450px 0px 0px; /* Top, Right, Bottom, Left */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 450px;
 }
 
 .product-item h3 {
   margin: 0 0 15px;
-  font-size: 40px; /* Larger font size */
+  font-size: 40px;
   font-weight: 700;
   color: #000000;
 }
 
 .product-item p {
   margin: 0;
-  font-size: 20px; /* Slightly larger font size */
-  line-height: 1.6; /* Better readability */
+  font-size: 20px;
+  line-height: 1.6;
   color: #555;
 }
 
 /* Animation Styles */
-/* Initial hidden state for h3 and p */
 .product-item h3,
 .product-item p {
   opacity: 0;
-  transform: translateX(-50px); /* Initially moved left */
+  transform: translateX(-50px);
   transition: opacity 0.6s ease, transform 1s ease;
 }
 
-/* Animation for h3 when visible */
-.product-item h3.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Animation for p when visible */
+.product-item h3.visible,
 .product-item p.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-
-
-
 /* Right Column */
 .product-right-column {
   display: flex;
-  align-items: flex-end; /* Align the component to the bottom */
-  justify-content: center; /* Center horizontally */
-  height: 100%; /* Make sure it takes the full height of the container */
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
 }
 
 .secondary-component {
-  padding: 0; /* Removed padding since we are just displaying an image */
+  padding: 0;
   width: 100%;
   display: flex;
-  justify-content: center; /* Center the image horizontally */
+  justify-content: center;
 }
 
 .secondary-image {
   width: 300px;
-  height: 400px; /* Maintain aspect ratio */
-  display: block; /* Ensure it's a block element, so it doesn't have any inline issues */
-  object-fit: cover; /* Make the image cover the entire area of the container */
+  height: 400px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .product-container {
+    flex-direction: column; /* Stack columns vertically */
+    padding: 100px 50px; /* Reduce padding */
+    gap: 20px;
+  }
+
+  .product-left-column {
+    align-items: center;
+    gap: 20px;
+  }
+
+  .product-title {
+    font-size: 40px; /* Reduce font size */
+    text-align: center; /* Center align text */
+  }
+
+  .product-item {
+    padding-right: 0; /* Remove extra padding */
+  }
+
+  .product-item h3 {
+    font-size: 30px; /* Adjust font size */
+    text-align: center;
+  }
+
+  .product-item p {
+    font-size: 18px; /* Adjust font size */
+    text-align: center;
+  }
+
+  .product-right-column {
+    align-items: center;
+  }
+
+  .secondary-image {
+    width: 250px; /* Adjust image size */
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    padding: 50px 30px; /* Further reduce padding */
+  }
+
+  .product-title {
+    font-size: 32px; /* Adjust font size */
+  }
+
+  .product-item h3 {
+    font-size: 24px; /* Adjust font size */
+  }
+
+  .product-item p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .secondary-image {
+    width: 200px; /* Adjust image size */
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+    padding: 20px; /* Minimal padding */
+    gap: 10px;
+  }
+
+  .product-title {
+    font-size: 24px;
+  }
+
+  .product-item h3 {
+    font-size: 20px;
+  }
+
+  .product-item p {
+    font-size: 14px;
+  }
+
+  .secondary-image {
+    width: 150px;
+    height: 200px;
+  }
 }

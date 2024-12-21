@@ -1,6 +1,5 @@
 .about-container {
   text-align: center;
-  /* margin: 50px; */
   background-color: #ffffff;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -18,9 +17,9 @@
 .about-flex-container {
   display: flex;
   justify-content: space-between;
-  gap: 100px; /* Adds space between the columns */
+  gap: 100px;
   padding: 0 10%;
-  flex-wrap: wrap; /* To make the layout responsive */
+  flex-wrap: wrap; /* Enables responsiveness by wrapping items on smaller screens */
 }
 
 .about-field {
@@ -75,4 +74,51 @@
 }
 .about-field p.in-view:nth-child(3) {
   transition-delay: 1s;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .about-flex-container {
+    gap: 50px; /* Reduce gap between items */
+  }
+  .about-field {
+    max-width: 45%; /* Increase width for better layout */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container h2 {
+    font-size: 38px; /* Adjust heading size */
+    padding: 0 5%; /* Reduce padding */
+  }
+  .about-flex-container {
+    flex-direction: column; /* Stack fields vertically */
+    gap: 30px; /* Smaller gap between items */
+    padding: 0 5%; /* Reduce container padding */
+  }
+  .about-field {
+    max-width: 100%; /* Fields take full width */
+    text-align: center; /* Center text for better readability */
+  }
+  .about-field h3 {
+    font-size: 30px; /* Adjust font size */
+  }
+  .about-field p {
+    font-size: 18px; /* Adjust paragraph size */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container h2 {
+    font-size: 32px; /* Smaller heading for mobile */
+  }
+  .about-field h3 {
+    font-size: 24px; /* Smaller heading size */
+  }
+  .about-field p {
+    font-size: 16px; /* Smaller paragraph size */
+  }
+  .about-flex-container {
+    gap: 20px; /* Smaller gap for tighter layout */
+  }
 }
